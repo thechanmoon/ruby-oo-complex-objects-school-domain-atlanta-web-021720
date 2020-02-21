@@ -155,16 +155,20 @@ class School
         #     end 
         # end 
 
-        @roster.sort
+        # @roster.sort
 
-        @roster.each do |key, value|
-            if @roster[key] != nil && @roster[key].is_a?
-                value.sort
-                #@roster[key] = @roster[key].sort
-            end 
-        end 
+        # @roster.each do |key, value|
+        #     if @roster[key] != nil && @roster[key].is_a?
+        #         value.sort
+        #         #@roster[key] = @roster[key].sort
+        #     end 
 
-        # return @roster 
+
+        retVal = {}
+        @roster.each do |grade, students|
+            retVal[grade] = students.sort
+        end
+        retVal
     end    
 
     # def roster
